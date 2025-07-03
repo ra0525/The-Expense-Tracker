@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>View Expenses</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .hidden-section { display: none; }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <h2>View Expenses</h2>
+
+  <div class="d-flex gap-2 mb-3">
+    <button onclick="showMonthly()" class="btn btn-info">📅 View Monthly Expenses</button>
+    <button onclick="showYearly()" class="btn btn-warning">📅 View Yearly Expenses</button>
+  </div>
+
+  <!-- Monthly Section -->
+  <div id="monthlySection" class="hidden-section">
+    <h4>Monthly Expenses</h4>
+    <form method="post" class="mb-3 d-flex gap-2">
+      <select name="month" class="form-control" required>
+        <option value="">-- Select Month --</option>
+        {% for m in months %}
+          <option value="{{ m }}">{{ m }}</option>
+        {% endfor %}
+      </select>
+      <select name="year" class="form-control" required>
+        <option value="">-- Select Year --</option>
+        {% for y in years %}
+          <option value="{{ y }}">{{ y }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="btn btn-primary">Show</button>
+    </form>
+
+    {% if monthly_data %}
+    <table class="table table-bordered">
+      <tr><th>Date</th><th>Category</th><th>Description</th><th>Amount</th></tr>
+      {% for row in monthly_data %}
+      <tr>
+        <td>{{ row['Date'] }}</td>
+        <td>{{ row['Category'] }}</td>
+        <td>{{ row['Description'] }}</td>
+        <td>{{ row['Amount'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <h5>Total for selected month: ₹{{ monthly_total }}</h5>
+    {% elif monthly_total == 0 and request.method=='POST' and 'month' in request.form %}
+    <p>No expenses found for this month and year.</p>
+    {% endif %}
+  </div>
+
+  <!-- Yearly Section -->
+  <div id="yearlySection" class="hidden-section">
+    <h4>Yearly Expenses</h4>
+    <form method="post" class="mb-3 d-flex gap-2">
+      <select name="year_only" class="form-control" required>
+        <option value="">-- Select Year --</option>
+        {% for y in years %}
+          <option value="{{ y }}">{{ y }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="btn btn-warning">Show</button>
+    </form>
+
+    {% if yearly_data %}
+    <table class="table table-bordered">
+      <tr><th>Date</th><th>Category</th><th>Description</th><th>Amount</th></tr>
+      {% for row in yearly_data %}
+      <tr>
+        <td>{{ row['Date'] }}</td>
+        <td>{{ row['Category'] }}</td>
+        <td>{{ row['Description'] }}</td>
+        <td>{{ row['Amount'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <h5>Total for selected year: ₹{{ yearly_total }}</h5>
+    {% elif yearly_total == 0 and request.method=='POST' and 'year_only' in request.form %}
+    <p>No expenses found for this year.</p>
+    {% endif %}
+  </div>
+
+  <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+</div>
+
+<script>
+function showMonthly() {
+  document.getElementById('monthlySection').style.display = 'block';
+  document.getElementById('yearlySection').style.display = 'none';
+}
+function showYearly() {
+  document.getElementById('monthlySection').style.display = 'none';
+  document.getElementById('yearlySection').style.display = 'block';
+}
+
+var activeSection = "{{ active_section|default('') }}";
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (activeSection === "monthly") {
+    showMonthly();
+  } else if (activeSection === "yearly") {
+    showYearly();
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* static/style.css */
+
+body {
+    background-color: white;
+    font-family: "Inter", sans-serif;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    /* max-width: 800vw; */
+}
+
+h1, h2, h4 {
+    color: #343a40;
+}
+
+table {
+    background: white;
+}
+
+.btn {
+    width: 250px;
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.container {
+    /* max-width: 800vw; */
+    max-width: 800px;
+}
+
+.mt-5 {
+    margin-top: 3rem!important;
+}
+
+/* ✅ Hero section only (homepage) */
+body.hero-bg {
+    /* background: linear-gradient(135deg, #0d0d0d, #1a1a1a); */
+    background: url(https://expensesmanager.in/assets/images/bg-pattern.png), linear-gradient(to left, rgb(39, 39, 39), rgb(18, 18, 18));
+    min-height: 100vh;
+    color: #fff;
+}
+
+body.hero-bg h1,
+body.hero-bg h4 {
+    color: #fff;
+}
+
+body.hero-bg .btn {
+    width: 220px;  /* allow natural width for hero buttons */
+}
+
+.hero-left {
+    margin-left: 10rem; /* adjust as needed */
+    margin-top: 4rem;
+    position: relative;
+}
+
+.title-top {
+    margin-left: 10rem;
+}
+
+/* Hero title responsive size */
+.hero-title {
+  font-weight: 700;
+  font-size: 0.9rem;         /* default for small mobile */
+  line-height: 1.3;
+}
+
+@media (min-width: 576px) {  /* small devices like larger phones */
+  .hero-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) {  /* tablets */
+  .hero-title {
+    font-size: 2rem;
+  }   
+}
+
+@media (min-width: 992px) {  /* desktops */
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) { /* large desktops */
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}

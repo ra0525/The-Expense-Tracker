@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reports & Charts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+      max-width: 400px;
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <h2>Reports & Charts</h2>
+
+  {% if monthly or yearly or cat %}
+    <h4 class="mt-4">Monthly Expenses</h4>
+    <canvas id="monthlyChart"></canvas>
+
+    <h4 class="mt-4">Yearly Expenses</h4>
+    <canvas id="yearlyChart"></canvas>
+
+    <h4 class="mt-4">Category-wise Expenses</h4>
+    <canvas id="categoryChart"></canvas>
+  {% else %}
+    <p>No expenses recorded yet.</p>
+  {% endif %}
+
+  <a href="/" class="btn btn-secondary mt-3">Back</a>
+</div>
+
+{% if monthly or yearly or cat %}
+<script>
+  const monthly = JSON.parse('{{ monthly|tojson|safe }}');
+  const yearly = JSON.parse('{{ yearly|tojson|safe }}');
+  const cat = JSON.parse('{{ cat|tojson|safe }}');
+
+  new Chart(document.getElementById('monthlyChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: monthly.map(item => item.MonthYear),
+      datasets: [{
+        label: 'Monthly Expenses',
+        data: monthly.map(item => item.Amount),
+        backgroundColor: 'rgba(54, 162, 235, 0.6)'
+      }]
+    }
+  });
+
+  new Chart(document.getElementById('yearlyChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: yearly.map(item => item.Year),
+      datasets: [{
+        label: 'Yearly Expenses',
+        data: yearly.map(item => item.Amount),
+        backgroundColor: 'rgba(255, 99, 132, 0.6)'
+      }]
+    }
+  });
+
+  new Chart(document.getElementById('categoryChart').getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels: cat.map(item => item.Category),
+      datasets: [{
+        label: 'Categories',
+        data: cat.map(item => item.Amount),
+        backgroundColor: ['#ff6384','#36a2eb','#cc65fe','#ffce56','#2ecc71']
+      }]
+    }
+  });
+</script>
+{% endif %}
+</body>
+</html>
