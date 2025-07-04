@@ -24,10 +24,27 @@ This project helps developers build customizable expense management solutions wi
 ## **Getting Started**
 ### **Prerequisites**
 This project requires the following dependencies:
-- Programming Language: HTML, Python
+- **Programming Language:** HTML, Python, CSS
+- **Framework:** Flask
 
 ### **Installation**
-
+Build The Expense Tracker from the source and install dependencies:
+1. **Clone the repository:**
+> git clone [text](https://github.com/ra0525/The-Expense-Tracker.git)
+2. **Navigate to the project directory:**
+> cd The-Expense-Tracker
+3. **Install the dependecies:**
+echo 'INSERT-INSTALL-COMMAND HERE'
+4. **Upload the code to git:**
+```
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <Repo link>
+git pull origin main --allow-unrelated-histories (Skip this step when Readme file is not already in the Git Repository)
+git push -u origin main
+```
 ### **Usage**
 
 ### **Testing**
