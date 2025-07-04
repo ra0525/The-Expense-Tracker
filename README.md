@@ -1,4 +1,4 @@
-# **THE-EXPENSE-TRACKER**
+<h1 align=center>THE-EXPENSE-TRACKER</h1>
 *Empower Your Finances, Master Your Future Today*
 
 ## **Table of Contents**
