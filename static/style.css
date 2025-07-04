@@ -65,26 +65,42 @@ body.hero-bg .btn {
   line-height: 1.3;
 }
 
-@media (min-width: 576px) {  /* small devices like larger phones */
+/* @media (max-width: 480px) {
+
+} */
+
+@media (max-width: 576px) {  /* small devices like larger phones */
   .hero-title {
     font-size: 1.4rem;
   }
+  .hero-left {
+    margin-left: 2rem;
+  }
 }
 
-@media (min-width: 768px) {  /* tablets */
+@media (max-width: 768px) {  /* tablets */
   .hero-title {
     font-size: 2rem;
   }   
+  .hero-left {
+    margin-left: 2rem;
+  }
 }
 
-@media (min-width: 992px) {  /* desktops */
+@media (max-width: 992px) {  /* desktops */
   .hero-title {
     font-size: 3rem;
+  }
+  hero-left {
+    margin-left: 2rem;
   }
 }
 
 @media (min-width: 1200px) { /* large desktops */
   .hero-title {
     font-size: 3.5rem;
+  }
+  hero-left {
+    margin-left: 2rem;
   }
 }
