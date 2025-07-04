@@ -1,7 +1,7 @@
 # **THE-EXPENSE-TRACKER**
 *Empower Your Finances, Master Your Future Today*
 
-**Table of Contents**
+## **Table of Contents**
 + [Overview](#overview)
 + [Getting Started](#getting-started)
   + [Prerequisites](#prerequisites)
