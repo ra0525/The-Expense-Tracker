@@ -70,15 +70,15 @@ body.hero-bg .btn {
     font-size: 1.4rem;
   }
   .hero-left {
-    margin-left: 1rem;
+    margin-left: 0.9rem;
   }
   .title-top {
-    margin-left: 1rem;
+    margin-left: 0.9rem;
   }
-  .btn {
+  /* .btn {
     text-align: center;
     gap: 3px;
-  }
+  } */
 }
 
 @media (max-width: 768px) {  /* tablets */
@@ -86,15 +86,15 @@ body.hero-bg .btn {
     font-size: 2rem;
   }   
   .hero-left {
-    margin-left: 1rem;
+    margin-left: 0.9rem;
   }
   .title-top {
-    margin-left: 1rem;
+    margin-left: 0.9rem;
   }
-  .btn {
+  /* .btn {
     text-align: center;
     gap: 3px;
-  }
+  } */
 }
 
 @media (max-width: 992px) {  /* desktops */
@@ -102,15 +102,15 @@ body.hero-bg .btn {
     font-size: 3rem;
   }
   hero-left {
-    margin-left: 1rem;
+    margin-left: 0.9rem;
   }
   .title-top {
-    margin-left: 1rem;
+    margin-left: 0.9rem;
   }
-  .btn {
+  /* .btn {
     text-align: center;
     gap: 3px;
-  }
+  } */
 }
 
 @media (min-width: 1200px) { /* large desktops */
