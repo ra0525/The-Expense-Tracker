@@ -74,10 +74,10 @@ body.hero-bg .btn {
     font-size: 1.4rem;
   }
   .hero-left {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
   .title-top {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 }
 
@@ -86,10 +86,10 @@ body.hero-bg .btn {
     font-size: 2rem;
   }   
   .hero-left {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
   .title-top {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 }
 
@@ -98,10 +98,10 @@ body.hero-bg .btn {
     font-size: 3rem;
   }
   hero-left {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
   .title-top {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 }
 
@@ -109,7 +109,7 @@ body.hero-bg .btn {
   .hero-title {
     font-size: 3.5rem;
   }
-  hero-left {
+  /* hero-left {
     margin-left: 2rem;
-  }
+  } */
 }
