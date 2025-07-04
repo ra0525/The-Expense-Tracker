@@ -1,13 +1,13 @@
 # **The-Expense-Tracker**
 ### Empower Your Finances, Master Your Future Today
 
-**Table of Contents**
-Overview [Overview](#overview)
-2. Getting Started
-   Prerequisites
-   Installation
-   Usage
-   Testing
+**Table of Contents**\
+[Overview](#overview)\
+[Getting Started](#getting-started)\
+   [Prerequisites](#prerequisites)\
+   [Installation](#installation)\
+   [Usage](#usage)\
+   [Testing](#testing)\
 ## **Overview** 
 
 
