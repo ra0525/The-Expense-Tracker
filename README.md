@@ -1,4 +1,4 @@
-<h1 align=center font=bold>THE-EXPENSE-TRACKER</h1>
+# <h1 align=center>**THE-EXPENSE-TRACKER**</h1>
 # <h4 align=center> *Empower Your Finances, Master Your Future Today* </h4>
 
 ## **Table of Contents**
