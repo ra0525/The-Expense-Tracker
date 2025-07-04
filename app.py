@@ -240,13 +240,21 @@ def reports():
     return render_template('reports.html', monthly=monthly, yearly=yearly, cat=cat)
 
 if __name__ == '__main__':
-    import webbrowser
-    from threading import Timer
-    port = 5000
+    app.run(host='0.0.0.0', port=5000)
 
-    # Only open browser if Flask isn't running in the reloader process
-    def open_browser():
-        webbrowser.open(f'http://127.0.0.1:{port}')
 
-    Timer(1, open_browser).start()
-    app.run(debug=True, port=port, use_reloader=False)
+
+
+# if __name__ == '__main__':
+#     if os.environ.get('RENDER'):
+#         # Running on Render
+#         app.run(host='0.0.0.0', port=5000)
+#     else:
+#         # Running locally
+#         import webbrowser
+#         from threading import Timer
+#         port = 5000
+#         def open_browser():
+#             webbrowser.open(f'http://127.0.0.1:{port}')
+#         Timer(1, open_browser).start()
+#         app.run(debug=True, port=port, use_reloader=False)
