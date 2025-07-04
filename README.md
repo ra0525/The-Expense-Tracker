@@ -31,7 +31,7 @@ This project requires the following dependencies:
 Build The Expense Tracker from the source and install dependencies:
 1. **Clone the repository:**
 > git clone [Repository](https://github.com/ra0525/The-Expense-Tracker.git)
-2. **Navigate to the project directory:**\
+2. **Navigate to the project directory:**<br/>
 > cd The-Expense-Tracker
 3. **Install the dependecies:**
 echo 'INSERT-INSTALL-COMMAND HERE'
@@ -46,5 +46,9 @@ git pull origin main --allow-unrelated-histories (Skip this step when Readme fil
 git push -u origin main
 ```
 ### **Usage**
+Run the project with:<br/>
+python app.py
 
 ### **Testing**
+The Expense Tracker uses the **Flask** test framework. Run the test suite with:
+flask --app app.py run
