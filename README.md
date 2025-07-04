@@ -1,5 +1,5 @@
 <center>THE-EXPENSE-TRACKER</center>
-# <h4 align=center> *Empower Your Finances, Master Your Future Today* </h4>
+<h4 align=center> *Empower Your Finances, Master Your Future Today* </h4>
 
 ## **Table of Contents**
 + [Overview](#overview)
