@@ -1,5 +1,5 @@
-# **THE-EXPENSE-TRACKER**
-Empower Your Finances, Master Your Future Today
+# **<h1>THE-EXPENSE-TRACKER</h1>**
+*Empower Your Finances, Master Your Future Today*
 
 **Table of Contents**
 + [Overview](#overview)
