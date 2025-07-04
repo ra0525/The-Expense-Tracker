@@ -1,4 +1,7 @@
 # **THE-EXPENSE-TRACKER**
+
+<h1 align=center>🌟💫 Hacktoberfest 2022 💫🌟</h1>
+
 # <h3 align=center> *Empower Your Finances, Master Your Future Today* </h3>
 
 ## **Table of Contents**
