@@ -1,5 +1,6 @@
-<h1 align=center> THE EXPENSE TRACKER </h1> <br/>
-<h4 align=center> *Empower Your Finances, Master Your Future Today* </h4>
+<h1 align=center> THE EXPENSE TRACKER </h1>
+
+### <center> *Empower Your Finances, Master Your Future Today* </center>
 
 ## **Table of Contents**
 + [Overview](#overview)
