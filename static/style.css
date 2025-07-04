@@ -76,6 +76,9 @@ body.hero-bg .btn {
   .hero-left {
     margin-left: 2rem;
   }
+  .title-top {
+    margin-left: 2rem;
+  }
 }
 
 @media (max-width: 768px) {  /* tablets */
@@ -85,6 +88,9 @@ body.hero-bg .btn {
   .hero-left {
     margin-left: 2rem;
   }
+  .title-top {
+    margin-left: 2rem;
+  }
 }
 
 @media (max-width: 992px) {  /* desktops */
@@ -92,6 +98,9 @@ body.hero-bg .btn {
     font-size: 3rem;
   }
   hero-left {
+    margin-left: 2rem;
+  }
+  .title-top {
     margin-left: 2rem;
   }
 }
