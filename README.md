@@ -30,10 +30,10 @@ This project requires the following dependencies:
 ### **Installation**
 Build The Expense Tracker from the source and install dependencies:
 1. **Clone the repository:**
-> git clone [text](https://github.com/ra0525/The-Expense-Tracker.git)
+> git clone [Repository](https://github.com/ra0525/The-Expense-Tracker.git)
 2. **Navigate to the project directory:**
 > cd The-Expense-Tracker
-3. **Install the dependecies:**
+3. **Install the dependecies:**/
 echo 'INSERT-INSTALL-COMMAND HERE'
 4. **Upload the code to git:**
 ```
