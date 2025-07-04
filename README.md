@@ -4,7 +4,7 @@ Empower Your Finances, Master Your Future Today
 **Table of Contents**
 * [Overview](#overview)
 * [Getting Started](#getting-started)
- - [Prerequisites](#prerequisites)
+  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Testing](#testing)
