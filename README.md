@@ -2,7 +2,6 @@
 
 <p align="center"> Empower Your Finances, Master Your Future Today </p>
 
-Here, is the web link for my project [The Expense Tracker](https://theexpensetracker-6mm2.onrender.com/)
 
 ## **Table of Contents**
 + [Overview](#overview)
@@ -11,6 +10,7 @@ Here, is the web link for my project [The Expense Tracker](https://theexpensetra
   + [Installation](#installation)
   + [Usage](#usage)
   + [Testing](#testing)
+  + [Links](#links)
 
 ## **Overview** 
 The Expense Tracker is an open-source, Flask-based web application that simplifies personal and business expense management through an intuitive interface and powerful reporting features. It enables users to record, categorize, and analyze financial transactions with ease, supporting better budgeting and financial planning.
@@ -61,3 +61,7 @@ python app.py
 The Expense Tracker uses the **Flask** test framework. Run the test suite with:<br/>
 
 flask --app app.py run
+
+### **Links**
+**GitHub Repo:** https://github.com/ra0525/The-Expense-Tracker.git <br/>
+**Web link:** https://theexpensetracker-6mm2.onrender.com/
