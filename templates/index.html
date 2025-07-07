@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   
   <!-- Your custom CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -20,37 +20,105 @@
     <h4 class="mb-0">💰 The Expense Tracker</h4>
   </div>
 
-  <!-- Hero section aligned left -->
+  <!-- Hero section with calculator -->
   <div class="container text-white hero-left">
-    <h1 class="hero-title">
-      Privacy-First Money Management:<br>
-      Track Your Spending, Grow Your Savings
-    </h1>
+    <div class="row justify-content-between align-items-start">
 
-    <div class="row g-3">
-      <div class="col-12 col-md-5">
-        <a href="/add" class="btn btn-primary">➕  Add Expense</a>
-      </div>  
-      <div class="col-12 col-md-5">
-        <a href="/view" class="btn btn-success">📊  View Expenses</a>
+      <!-- Left: title & buttons -->
+      <div class="col-12 col-md-6">
+        <h1 class="hero-title mb-4">
+          Privacy-First Money Management:<br>
+          Track Your Spending, Grow Your Savings
+        </h1>
+
+        <div class="row g-3 hero-buttons">
+          <div class="col-12 col-md-6">
+            <a href="/add" class="btn btn-primary">➕ Add Expense</a>
+          </div>  
+          <div class="col-12 col-md-6">
+            <a href="/view" class="btn btn-success">📊 View Expenses</a>
+          </div>
+          <div class="col-12 col-md-6">  
+            <a href="/by_date" class="btn btn-warning">📅 View by Date Range</a>  
+          </div>  
+          <div class="col-12 col-md-6"> 
+            <a href="/by_category" class="btn btn-info">📂 View by Category</a>
+          </div>
+          <div class="col-12 col-md-6"> 
+            <a href="/edit" class="btn btn-secondary">✏️ Edit Expense by Date</a>
+          </div>
+          <div class="col-12 col-md-6">
+            <a href="/delete" class="btn btn-danger">🗑️ Delete Expense</a>
+          </div> 
+          <div class="col-12 col-md-6">   
+            <a href="/reports" class="btn btn-dark">📈 Reports & Charts</a> 
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-md-5">  
-        <a href="/by_date" class="btn btn-warning">📅  View by Date Range</a>  
-      </div>  
-      <div class="col-12 col-md-5"> 
-        <a href="/by_category" class="btn btn-info">📂  View by Category</a>
-      </div>
-      <div class="col-12 col-md-5"> 
-        <a href="/edit" class="btn btn-secondary">✏️  Edit Expense by Date</a>
-      </div>
-      <div class="col-12 col-md-5">
-        <a href="/delete" class="btn btn-danger">🗑️  Delete Expense</a>
-      </div> 
-      <div class="col-12 col-md-5">   
-        <a href="/reports" class="btn btn-dark">📈  Reports & Charts</a> 
+
+      <!-- Right: calculator -->
+      <div class="col-12 col-md-5 mt-4 mt-md-0">
+        <div class="calculator card text-dark p-3">
+          <h3>🧮 Calculator</h3>
+          <input type="text" id="calc-display" class="form-control mb-2 text-end" readonly>
+          <div class="d-grid gap-2 right">
+            <div class="row g-2">
+              <div class="col-3"><button class="btn btn-danger w-100" onclick="clearCalc()">AC</button></div>
+              <div class="col-3"><button class="btn btn-secondary w-100" onclick="deleteLast()">⌫</button></div>
+              <div class="col-3"><button class="btn btn-warning w-100" onclick="appendCalc('%')">%</button></div>
+              <div class="col-3"><button class="btn btn-warning w-100" onclick="appendCalc('/')">÷</button></div>
+            </div>
+            <div class="row g-2">
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('7')">7</button></div>
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('8')">8</button></div>
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('9')">9</button></div>
+              <div class="col-3"><button class="btn btn-warning w-100" onclick="appendCalc('*')">×</button></div>
+            </div>
+            <div class="row g-2">
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('4')">4</button></div>
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('5')">5</button></div>
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('6')">6</button></div>
+              <div class="col-3"><button class="btn btn-warning w-100" onclick="appendCalc('-')">−</button></div>
+            </div>
+            <div class="row g-2">
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('1')">1</button></div>
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('2')">2</button></div>
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('3')">3</button></div>
+              <div class="col-3"><button class="btn btn-warning w-100" onclick="appendCalc('+')">+</button></div>
+            </div>
+            <div class="row g-2">
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('00')">00</button></div>
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('0')">0</button></div>
+              <div class="col-3"><button class="btn btn-light w-100" onclick="appendCalc('.')">.</button></div>
+              <div class="col-3"><button class="btn btn-success w-100" onclick="calculate()">=</button></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Calculator JS -->
+  <script>
+    function appendCalc(value) {
+      document.getElementById('calc-display').value += value;
+    }
+    function deleteLast() {
+      let display = document.getElementById('calc-display');
+      display.value = display.value.slice(0, -1);
+    }
+    function calculate() {
+      try {
+        let result = eval(document.getElementById('calc-display').value);
+        document.getElementById('calc-display').value = result;
+      } catch {
+        document.getElementById('calc-display').value = 'Error';
+      }
+    }
+    function clearCalc() {
+      document.getElementById('calc-display').value = '';
+    }
+  </script>
 
 </body>
 </html>
