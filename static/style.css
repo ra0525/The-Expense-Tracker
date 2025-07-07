@@ -23,7 +23,7 @@ table {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1200px;
 }
 
 .mt-5 {
@@ -86,6 +86,9 @@ body.hero-bg .btn {
   .hero-left .right {
     line-height: 3.5rem;
   }
+  .calculator {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 768px) {  /* tablets */
@@ -103,6 +106,7 @@ body.hero-bg .btn {
   }
   .calculator {
     margin: 2rem auto 0; /* center on mobile */
+    margin-bottom: 2rem;
   }
   .hero-left .right {
     line-height: 3.5rem;
@@ -125,6 +129,9 @@ body.hero-bg .btn {
   .hero-left .right {
     line-height: 3.5rem;
   }
+  .calculator {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 1200px) { /* large desktops */
@@ -136,5 +143,8 @@ body.hero-bg .btn {
   }
   .hero-left .right {
     line-height: 3.5rem;
+  }
+  .calculator {
+    margin-bottom: 2rem;
   }
 }
